@@ -22,6 +22,7 @@ set visualbell
 set ruler
 set ttyfast
 set backspace=indent,eol,start
+set colorcolumn=90
 
 " tabbing
 set autoindent            " auto-indent
@@ -40,7 +41,11 @@ set gdefault
 set incsearch
 set showmatch
 set hlsearch
-nnoremap <leader><space> :noh<cr>    
+nnoremap <leader><space> :noh<cr>
+
+" invisible characters
+"set list
+"set listchars=tab:▸\ ,eol:¬
 
 " theme
 set background=dark
