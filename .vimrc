@@ -4,6 +4,9 @@ set nocompatible
 set runtimepath+=~/.vim/vim-addon-manager
 call vam#ActivateAddons(['github:vim-perl/vim-perl'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
+call vam#ActivateAddons(['github:kien/ctrlp.vim'])
+call vam#ActivateAddons(['github:yko/mojo.vim'])
+call vam#ActivateAddons(['github:mileszs/ack.vim'])
 
 " behavior
 syntax enable
