@@ -8,6 +8,9 @@ call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:yko/mojo.vim'])
 call vam#ActivateAddons(['github:mileszs/ack.vim'])
 
+" mojo (doesn't seem to be working for me)
+let mojo_highlight_data=1
+
 " behavior
 syntax enable
 set modelines=0
