@@ -49,6 +49,9 @@ set showmatch
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 
+" perltidy
+nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
+
 " invisible characters
 "set list
 "set listchars=tab:▸\ ,eol:¬
