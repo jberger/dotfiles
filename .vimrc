@@ -7,6 +7,8 @@ call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
 call vam#ActivateAddons(['github:yko/mojo.vim'])
 call vam#ActivateAddons(['github:mileszs/ack.vim'])
+call vam#ActivateAddons(['Arduino_syntax_file'])
+call vam#ActivateAddons(['github:jplaut/vim-arduino-ino'])
 
 " mojo (doesn't seem to be working for me)
 let mojo_highlight_data=1
@@ -63,7 +65,12 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
+" arduino
+au BufRead,BufNewFile *.pde set filetype=arduino
+au BufRead,BufNewFile *.ino set filetype=arduino
+" Note that the ino plugin requires the ino command
+
 " see also:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
-
+" http://grantlucas.com/posts/2012/09/using-vim-arduino-development
