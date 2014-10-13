@@ -29,6 +29,7 @@ VAMActivate github:mileszs/ack.vim
 VAMActivate Arduino_syntax_file
 VAMActivate github:jplaut/vim-arduino-ino
 VAMActivate github:airblade/vim-gitgutter
+VAMActivate github:scrooloose/nerdcommenter
 
 " theme
 set background=dark
