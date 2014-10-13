@@ -1,7 +1,25 @@
-set nocompatible
+set nocompatible | filetype indent plugin on | syn on
+
+" bootstrap VAM
+fun! SetupVAM()
+  let c = get(g:, 'vim_addon_manager', {})
+  let g:vim_addon_manager = c
+  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
+  " most used options you may want to use:
+  " let c.log_to_buf = 1
+  " let c.auto_install = 0
+  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
+  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
+    execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
+        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
+  endif
+
+  " This provides the VAMActivate command, you could be passing plugin names, too
+  call vam#ActivateAddons([], {})
+endfun
+call SetupVAM()
 
 " addons
-set runtimepath+=~/.vim/vim-addon-manager
 call vam#ActivateAddons(['github:vim-perl/vim-perl'])
 call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
 call vam#ActivateAddons(['github:kien/ctrlp.vim'])
@@ -12,14 +30,13 @@ call vam#ActivateAddons(['github:jplaut/vim-arduino-ino'])
 call vam#ActivateAddons(['github:airblade/vim-gitgutter.git'])
 
 
-" mojo (doesn't seem to be working for me)
+" mojolicious
 let mojo_highlight_data=1
 
 " behavior
 syntax enable
 set modelines=0
 set encoding=utf-8
-filetype plugin indent on
 set number
 set hidden
 set title
