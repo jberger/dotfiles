@@ -9,6 +9,8 @@ call vam#ActivateAddons(['github:yko/mojo.vim'])
 call vam#ActivateAddons(['github:mileszs/ack.vim'])
 call vam#ActivateAddons(['Arduino_syntax_file'])
 call vam#ActivateAddons(['github:jplaut/vim-arduino-ino'])
+call vam#ActivateAddons(['github:airblade/vim-gitgutter.git'])
+
 
 " mojo (doesn't seem to be working for me)
 let mojo_highlight_data=1
