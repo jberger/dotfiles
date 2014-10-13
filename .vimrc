@@ -20,15 +20,22 @@ endfun
 call SetupVAM()
 
 " addons
-call vam#ActivateAddons(['github:vim-perl/vim-perl'])
-call vam#ActivateAddons(['github:altercation/vim-colors-solarized'])
-call vam#ActivateAddons(['github:kien/ctrlp.vim'])
-call vam#ActivateAddons(['github:yko/mojo.vim'])
-call vam#ActivateAddons(['github:mileszs/ack.vim'])
-call vam#ActivateAddons(['Arduino_syntax_file'])
-call vam#ActivateAddons(['github:jplaut/vim-arduino-ino'])
-call vam#ActivateAddons(['github:airblade/vim-gitgutter.git'])
+VAMActivate github:bling/vim-airline
+VAMActivate github:vim-perl/vim-perl
+VAMActivate github:altercation/vim-colors-solarized
+VAMActivate github:kien/ctrlp.vim
+VAMActivate github:yko/mojo.vim
+VAMActivate github:mileszs/ack.vim
+VAMActivate Arduino_syntax_file
+VAMActivate github:jplaut/vim-arduino-ino
+VAMActivate github:airblade/vim-gitgutter
 
+" theme
+set background=dark
+set t_Co=256
+let g:solarized_termcolors=256
+let g:solarized_termtrans=1
+colorscheme solarized
 
 " mojolicious
 let mojo_highlight_data=1
@@ -41,7 +48,7 @@ set number
 set hidden
 set title
 set scrolloff=3
-set showmode
+set showmode " disabled by airline below
 set showcmd
 set wildmenu
 set wildmode=list:longest
@@ -77,17 +84,29 @@ nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
 "set list
 "set listchars=tab:▸\ ,eol:¬
 
-" theme
-set background=dark
-set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-colorscheme solarized
 
 " arduino
 au BufRead,BufNewFile *.pde set filetype=arduino
 au BufRead,BufNewFile *.ino set filetype=arduino
 " Note that the ino plugin requires the ino command
+
+" airline
+set ttimeoutlen=50
+set laststatus=2
+set noshowmode
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+let g:airline_left_sep = '' " '▶'
+let g:airline_right_sep = '' " '◀'
+let g:airline_symbols.linenr = '' " '␊'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.whitespace = 'Ξ'
 
 " see also:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
