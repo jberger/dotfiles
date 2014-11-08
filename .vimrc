@@ -38,6 +38,9 @@ let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 colorscheme solarized
 
+" perl
+let perl_no_subprototype_error=1
+
 " mojolicious
 let mojo_highlight_data=1
 
