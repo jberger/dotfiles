@@ -114,6 +114,11 @@ let g:airline_symbols.branch = '⎇'
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.whitespace = 'Ξ'
 
+" airline tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+
 " see also:
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/
 " http://blog.smalleycreative.com/tutorials/using-git-and-github-to-manage-your-dotfiles/
