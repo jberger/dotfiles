@@ -32,6 +32,7 @@ VAMActivate github:airblade/vim-gitgutter
 VAMActivate github:tpope/vim-fugitive
 VAMActivate github:scrooloose/nerdcommenter
 VAMActivate github:gregsexton/MatchTag
+VAMActivate github:tpope/vim-unimpaired
 
 " theme
 set background=dark
