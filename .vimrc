@@ -86,6 +86,8 @@ nnoremap <leader><space> :noh<cr>
 
 " perltidy
 nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
+"
+nnoremap <Leader>p <Esc>:!prove -l %<CR>
 
 " invisible characters
 "set list
