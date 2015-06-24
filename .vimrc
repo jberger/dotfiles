@@ -33,6 +33,8 @@ VAMActivate github:tpope/vim-fugitive
 VAMActivate github:scrooloose/nerdcommenter
 VAMActivate github:gregsexton/MatchTag
 VAMActivate github:tpope/vim-unimpaired
+VAMActivate github:majutsushi/tagbar " requires ctags executable
+
 
 " theme
 set background=dark
@@ -84,14 +86,22 @@ set showmatch
 set hlsearch
 nnoremap <leader><space> :noh<cr>
 
+" external commands:
 " perltidy
 nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
-"
+" prove (current file)
 nnoremap <Leader>p <Esc>:!prove -l %<CR>
 
 " invisible characters
 "set list
 "set listchars=tab:▸\ ,eol:¬
+
+" ctags integration (from http://andrew.stwrt.ca/posts/vim-ctags/):
+" ctrlp
+nnoremap <leader>. :CtrlPTag<cr>
+" tagbar
+nnoremap <silent> <Leader>b :TagbarOpenAutoClose<CR>
+nnoremap <silent> <Leader>B :TagbarToggle<CR>
 
 
 " arduino
