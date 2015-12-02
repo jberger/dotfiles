@@ -25,6 +25,7 @@ VAMActivate github:vim-perl/vim-perl
 VAMActivate github:altercation/vim-colors-solarized
 VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
+VAMActivate github:elzr/vim-json
 VAMActivate github:mileszs/ack.vim
 VAMActivate Arduino_syntax_file
 VAMActivate github:jplaut/vim-arduino-ino
