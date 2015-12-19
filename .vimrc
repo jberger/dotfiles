@@ -35,6 +35,7 @@ VAMActivate github:scrooloose/nerdcommenter
 VAMActivate github:gregsexton/MatchTag
 VAMActivate github:tpope/vim-unimpaired
 VAMActivate github:majutsushi/tagbar " requires ctags executable
+VAMActivate github:chrisbra/Recover.vim
 
 
 " theme
