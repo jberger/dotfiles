@@ -89,14 +89,17 @@ nnoremap <leader><space> :noh<cr>
 
 " vim shortcuts
 " cleanup trailing whitespace
-nnoremap <Leader>ww :%s/\s\+$//c<CR>
+nnoremap <Leader>wc :%s/\s\+$//c<CR>
 nnoremap <Leader>wa :%s/\s\+$//<CR>
 
 " external commands:
 " perltidy
 nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
-" prove (current file)
+" prove
+" current file
 nnoremap <Leader>p <Esc>:!prove -l %<CR>
+" all tests
+nnoremap <Leader>pa <Esc>:!prove -lr<CR>
 
 " invisible characters
 "set list
