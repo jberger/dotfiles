@@ -21,6 +21,7 @@ call SetupVAM()
 
 " addons
 VAMActivate github:bling/vim-airline
+VAMActivate github:vim-airline/vim-airline-themes
 VAMActivate github:vim-perl/vim-perl
 VAMActivate github:altercation/vim-colors-solarized
 VAMActivate github:kien/ctrlp.vim
@@ -37,7 +38,6 @@ VAMActivate github:tpope/vim-unimpaired
 VAMActivate github:majutsushi/tagbar " requires ctags executable
 VAMActivate github:chrisbra/Recover.vim
 
-
 " theme
 set background=dark
 set t_Co=256
@@ -47,6 +47,8 @@ colorscheme solarized
 
 " perl
 let perl_no_subprototype_error=1
+let perl_extended_vars = 1
+let perl_include_pod = 1
 
 " mojolicious
 let mojo_highlight_data=1
