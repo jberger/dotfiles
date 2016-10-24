@@ -13,7 +13,7 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 BACKUP="$DIR/.backup"
 
 # list of files/folders to symlink in homedir
-FILES="vimrc latexmkrc"
+FILES="vimrc latexmkrc psqlrc"
 
 ##########
 

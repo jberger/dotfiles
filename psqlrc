@@ -1,0 +1,25 @@
+\set QUIET 1
+-- \pset pager off
+\pset null '(null)'
+
+-- Customize prompts
+\set PROMPT1 '%[%033[1m%][%/] # '
+\set PROMPT2 '... # '
+
+-- Show how long each query takes to execute
+\timing
+
+-- Enter interactive mode on failed transaction
+\set ON_ERROR_ROLLBACK interactive
+
+-- Use best available output format
+\x auto
+\set VERBOSITY verbose
+\set COMP_KEYWORD_CASE preserve-lower
+\set HISTFILE ~/.psql_history- :DBNAME
+\set HISTCONTROL ignoredups
+\unset QUIET
+
+
+-- from http://www.craigkerstiens.com/2015/12/29/my-postgres-top-10-for-2016/
+-- and https://robots.thoughtbot.com/an-explained-psqlrc
