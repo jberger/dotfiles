@@ -1,0 +1,18 @@
+[user]
+  name = Joel Berger
+  email = joel.a.berger@gmail.com
+[push]
+  default = simple
+[core]
+  editor = vim
+[alias]
+  please = push --force-with-lease
+  fixup = commit --amend --no-edit
+  stsh = stash --keep-index
+  staash = stash --include-untracked
+  staaash = stash --all
+  st = status --short --branch
+  flog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+
+
+# from https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
