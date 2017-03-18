@@ -28,8 +28,8 @@ VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
 VAMActivate github:elzr/vim-json
 VAMActivate github:mileszs/ack.vim
-VAMActivate Arduino_syntax_file
-VAMActivate github:jplaut/vim-arduino-ino
+"VAMActivate Arduino_syntax_file
+"VAMActivate github:jplaut/vim-arduino-ino
 VAMActivate github:airblade/vim-gitgutter
 VAMActivate github:tpope/vim-fugitive
 VAMActivate github:scrooloose/nerdcommenter
