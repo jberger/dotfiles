@@ -6,8 +6,8 @@ fun! SetupVAM()
   let g:vim_addon_manager = c
   let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
   " most used options you may want to use:
-  " let c.log_to_buf = 1
-  " let c.auto_install = 0
+  let c.log_to_buf = 1
+  let c.auto_install = 0
   let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
   if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
     execute '!git clone --depth=1 git://github.com/MarcWeber/vim-addon-manager '
