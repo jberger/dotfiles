@@ -50,7 +50,7 @@ let g:solarized_termtrans=1
 colorscheme solarized
 
 " perl
-let perl_no_subprototype_error=1
+let perl_sub_signatures = 1
 let perl_extended_vars = 1
 let perl_include_pod = 1
 
