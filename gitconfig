@@ -5,6 +5,7 @@
   default = simple
 [core]
   editor = vim
+  excludesfile = ~/.gitignore_global
 [alias]
   please = push --force-with-lease
   fixup = commit --amend --no-edit
