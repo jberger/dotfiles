@@ -3,6 +3,7 @@
   email = joel.a.berger@gmail.com
 [push]
   default = simple
+  followTags = true
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
@@ -14,6 +15,10 @@
   staaash = stash --all
   st = status --short --branch
   flog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
-
+  prune = fetch --prune
+  undo = reset --soft HEAD^
+[merge]
+  conflictstyle = diff3
 
 # from https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
+# and https://blog.scottnonnenberg.com/better-git-configuration
