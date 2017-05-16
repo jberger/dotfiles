@@ -55,7 +55,7 @@ let perl_extended_vars = 1
 let perl_include_pod = 1
 
 " mojolicious
-let mojo_highlight_data=1
+"let mojo_highlight_data=1
 
 " json
 let g:vim_json_syntax_conceal = 0
