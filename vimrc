@@ -28,8 +28,6 @@ VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
 VAMActivate github:elzr/vim-json
 VAMActivate github:mileszs/ack.vim
-"VAMActivate Arduino_syntax_file
-"VAMActivate github:jplaut/vim-arduino-ino
 VAMActivate github:airblade/vim-gitgutter
 VAMActivate github:tpope/vim-fugitive
 VAMActivate github:scrooloose/nerdcommenter
@@ -121,12 +119,6 @@ nnoremap <leader>. :CtrlPTag<cr>
 " tagbar
 nnoremap <silent> <Leader>b :TagbarOpenAutoClose<CR>
 nnoremap <silent> <Leader>B :TagbarToggle<CR>
-
-
-" arduino
-au BufRead,BufNewFile *.pde set filetype=arduino
-au BufRead,BufNewFile *.ino set filetype=arduino
-" Note that the ino plugin requires the ino command
 
 " airline
 set ttimeoutlen=50
