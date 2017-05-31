@@ -23,6 +23,7 @@ call SetupVAM()
 VAMActivate github:bling/vim-airline
 VAMActivate github:vim-airline/vim-airline-themes
 VAMActivate github:vim-perl/vim-perl
+VAMActivate github:w0rp/ale
 VAMActivate github:altercation/vim-colors-solarized
 VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
@@ -51,6 +52,9 @@ colorscheme solarized
 let perl_sub_signatures = 1
 let perl_extended_vars = 1
 let perl_include_pod = 1
+
+" syntax checking (ale)
+let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
 
 " mojolicious
 "let mojo_highlight_data=1
