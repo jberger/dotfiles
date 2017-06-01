@@ -55,6 +55,8 @@ let perl_include_pod = 1
 
 " syntax checking (ale)
 let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+" I'm not a fan of perl-critic
+let g:ale_linters = {'perl': ['perl'],}
 " prevent the linter from running while typing
 let g:ale_lint_on_text_changed = 'never'
 
