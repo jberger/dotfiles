@@ -55,6 +55,8 @@ let perl_include_pod = 1
 
 " syntax checking (ale)
 let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+" prevent the linter from running while typing
+let g:ale_lint_on_text_changed = 'never'
 
 " mojolicious
 "let mojo_highlight_data=1
