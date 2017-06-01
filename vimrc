@@ -102,9 +102,10 @@ set hlsearch
 nnoremap <leader><space> :noh<cr>
 
 " vim shortcuts
-" cleanup trailing whitespace
-nnoremap <Leader>wc :%s/\s\+$//c<CR>
-nnoremap <Leader>wa :%s/\s\+$//<CR>
+" cleanup whitespace
+nnoremap <Leader>we :%s/\s\+$//<CR>
+nnoremap <Leader>wt :retab<CR>
+nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
 
 " external commands:
 " perltidy
