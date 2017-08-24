@@ -40,6 +40,7 @@ VAMActivate github:bronson/vim-visual-star-search
 VAMActivate github:farmergreg/vim-lastplace
 VAMActivate github:unblevable/quick-scope
 VAMActivate github:AndrewRadev/splitjoin.vim
+VAMActivate github:lifepillar/pgsql.vim
 
 " theme
 set background=dark
@@ -52,6 +53,9 @@ colorscheme solarized
 let perl_sub_signatures = 1
 let perl_extended_vars = 1
 let perl_include_pod = 1
+
+" postgres
+let g:sql_type_default = 'pgsql' " default sql files to postgres syntax
 
 " syntax checking (ale)
 let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
