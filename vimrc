@@ -87,6 +87,7 @@ set ruler
 set ttyfast
 set backspace=indent,eol,start
 set colorcolumn=90
+set nojoinspaces " don't join sentances with double space
 
 " tabbing
 set autoindent            " auto-indent
