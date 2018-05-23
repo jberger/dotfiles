@@ -58,7 +58,7 @@ let perl_include_pod = 1
 let g:sql_type_default = 'pgsql' " default sql files to postgres syntax
 
 " syntax checking (ale)
-let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib'
+let g:ale_perl_perl_options = '-c -Mwarnings -Ilib -It/lib -Ilocal/lib/perl5'
 " I'm not a fan of perl-critic
 let g:ale_linters = {'perl': ['perl'],}
 " prevent the linter from running while typing
