@@ -119,7 +119,7 @@ nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
 nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
 " prove
 " current file
-nnoremap <Leader>p <Esc>:!prove -l %<CR>
+nnoremap <Leader>p <Esc>:!prove -l -I local/lib/perl5 %<CR>
 " all tests
 nnoremap <Leader>pa <Esc>:!prove -lr<CR>
 
