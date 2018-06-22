@@ -17,6 +17,7 @@
   flog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
   prune = fetch --prune
   undo = reset --soft HEAD^
+  pdiff = diff --color-words -w -b
 [merge]
   conflictstyle = diff3
 
