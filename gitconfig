@@ -9,7 +9,7 @@
   excludesfile = ~/.gitignore_global
 [alias]
   please = push --force-with-lease
-  fixup = commit --amend --no-edit
+  fix = commit --amend --no-edit
   stsh = stash --keep-index
   staash = stash --include-untracked
   staaash = stash --all
