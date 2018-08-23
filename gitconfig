@@ -8,7 +8,7 @@
   editor = vim
   excludesfile = ~/.gitignore_global
 [alias]
-  start = '!git init && git commit -m "root" --allow-empty'
+  start = "!f() { git init && git commit -m 'root' --allow-empty; }; f"
   please = push --force-with-lease
   fix = commit --amend --no-edit
   stsh = stash --keep-index
