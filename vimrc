@@ -23,7 +23,7 @@ call SetupVAM()
 VAMActivate github:bling/vim-airline
 VAMActivate github:vim-airline/vim-airline-themes
 VAMActivate github:vim-perl/vim-perl
-VAMActivate github:w0rp/ale
+"VAMActivate github:w0rp/ale
 VAMActivate github:altercation/vim-colors-solarized
 VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
