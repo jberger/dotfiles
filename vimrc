@@ -67,6 +67,9 @@ let g:ale_lint_on_text_changed = 'never'
 " mojolicious
 "let mojo_highlight_data=1
 
+" javascript modules
+au BufRead,BufNewFile *.mjs setfiletype javascript
+
 " json
 let g:vim_json_syntax_conceal = 0
 
