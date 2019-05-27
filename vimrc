@@ -31,6 +31,7 @@ VAMActivate github:elzr/vim-json
 VAMActivate github:mileszs/ack.vim
 VAMActivate github:airblade/vim-gitgutter
 VAMActivate github:tpope/vim-fugitive
+VAMActivate github:tpope/vim-surround
 VAMActivate github:scrooloose/nerdcommenter
 VAMActivate github:gregsexton/MatchTag
 VAMActivate github:tpope/vim-unimpaired
