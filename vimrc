@@ -117,6 +117,8 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <Leader>we :%s/\s\+$//<CR>
 nnoremap <Leader>wt :retab<CR>
 nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
+" insert a literal tab with shift-tab
+inoremap <S-Tab> <C-V><Tab>
 
 " external commands:
 " perltidy
