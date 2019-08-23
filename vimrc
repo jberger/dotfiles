@@ -122,7 +122,7 @@ nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
 inoremap <S-Tab> <C-V><Tab>
 
 " vim-test
-let test#perl#prove#options = '-l -I local/lib/perl5'
+let test#perl#prove#options = '-I local/lib/perl5'
 nnoremap <Leader>p <Esc>:TestFile<CR>
 
 " external commands:
