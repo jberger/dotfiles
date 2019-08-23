@@ -42,6 +42,7 @@ VAMActivate github:farmergreg/vim-lastplace
 VAMActivate github:unblevable/quick-scope
 VAMActivate github:AndrewRadev/splitjoin.vim
 VAMActivate github:lifepillar/pgsql.vim
+VAMActivate github:janko/vim-test
 
 " theme
 set background=dark
@@ -120,14 +121,13 @@ nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
 " insert a literal tab with shift-tab
 inoremap <S-Tab> <C-V><Tab>
 
+" vim-test
+let test#perl#prove#options = '-l -I local/lib/perl5'
+nnoremap <Leader>p <Esc>:TestFile<CR>
+
 " external commands:
 " perltidy
 nnoremap <Leader>t mz:%!perltidy -q<CR>'z:delmarks z<CR>
-" prove
-" current file
-nnoremap <Leader>p <Esc>:!prove -l -I local/lib/perl5 %<CR>
-" all tests
-nnoremap <Leader>pa <Esc>:!prove -lr<CR>
 
 " invisible characters
 "set list
