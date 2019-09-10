@@ -1,29 +1,31 @@
 [user]
-  name = Joel Berger
+  name  = Joel Berger
   email = joel.a.berger@gmail.com
 [push]
-  default = simple
+  default    = simple
   followTags = true
 [pull]
   rebase = true
 [rebase]
   autosquash = true
   autostash  = true
+[merge]
+  conflictstyle = diff3
 [core]
-  editor = vim
+  editor       = vim
   excludesfile = ~/.gitignore_global
 [alias]
-  start = "!f() { git init && git commit -m 'root' --allow-empty; }; f"
-  please = push --force-with-lease
-  fix = commit --amend --no-edit
-  stsh = stash --keep-index
-  staash = stash --include-untracked
+  start   = "!f() { git init && git commit -m 'root' --allow-empty; }; f"
+  please  = push --force-with-lease
+  fix     = commit --amend --no-edit
+  stsh    = stash --keep-index
+  staash  = stash --include-untracked
   staaash = stash --all
-  st = status --short --branch
-  flog = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
-  prune = fetch --prune
-  undo = reset --soft HEAD^
-  pdiff = "!f() { git diff --check $@ && git diff --color-words -w -b $@; }; f"
+  st      = status --short --branch
+  flog    = log --graph --abbrev-commit --decorate --all --format=format:\"%C(bold blue)%h%C(reset) - %C(bold cyan)%aD%C(dim white) - %an%C(reset) %C(bold green)(%ar)%C(reset)%C(bold yellow)%d%C(reset)%n %C(white)%s%C(reset)\"
+  prune   = fetch --prune
+  undo    = reset --soft HEAD^
+  pdiff   = "!f() { git diff --check $@ && git diff --color-words -w -b $@; }; f"
 
 # from https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
 # and https://blog.scottnonnenberg.com/better-git-configuration
