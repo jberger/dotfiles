@@ -27,6 +27,8 @@
   undo    = reset --soft HEAD^
   pdiff   = "!f() { git diff --check $@ && git diff --color-words -w -b $@; }; f"
 
-# from https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
-# and https://blog.scottnonnenberg.com/better-git-configuration
-# https://www.raphael-brugier.com/blog/git-commit-fixup/
+# with inspiration drawn from
+#   https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
+#   https://blog.scottnonnenberg.com/better-git-configuration
+#   https://www.raphael-brugier.com/blog/git-commit-fixup/
+#   https://thoughtbot.com/blog/autosquashing-git-commits
