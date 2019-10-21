@@ -26,6 +26,7 @@
   prune   = fetch --prune
   undo    = reset --soft HEAD^
   pdiff   = "!f() { git diff --check $@ && git diff --color-words -w -b $@; }; f"
+  ls      = ls-tree -r --name-only HEAD
 
 # with inspiration drawn from
 #   https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
