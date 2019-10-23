@@ -139,6 +139,10 @@ nnoremap <leader>. :CtrlPTag<cr>
 " tagbar
 nnoremap <silent> <Leader>b :TagbarOpenAutoClose<CR>
 nnoremap <silent> <Leader>B :TagbarToggle<CR>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](\.(git|hg|svn)|(vendor)|(node_modules))$',
+  \ 'file': '\v\.(exe|so|dll)$',
+\ }
 
 " airline
 set ttimeoutlen=50
