@@ -10,25 +10,16 @@ use File::Copy 'move';
 
 my $backup = "$Bin/.backup";
 
-my @files = (qw[
-  vimrc
-  latexmkrc
-  psqlrc
-  gitconfig
-  gitignore_global
-  bash_aliases
-  ssh/rc
-  digrc
-]);
-
 sub install {
   my $file = shift;
+  my $as = shift || $file;
+
   my $source = "$Bin/$file";
   if (!-e $source) {
     die "Source file $source does not exist, bailing out!";
   }
 
-  my $target = "$ENV{HOME}/.$file";
+  my $target = "$ENV{HOME}/.$as";
   if (-l $target) {
     my $link = readlink $target;
     if ($link eq $source) {
@@ -42,6 +33,7 @@ sub install {
     move $target, $backup or die "Backup failed: $!";
   }
 
+  say STDERR "Creating link $target -> $source";
   symlink $source, $target or die "Could not link $target -> $source";
 }
 
@@ -51,9 +43,22 @@ sub main {
     make_path $backup or die "Error creating $backup: $!";
   }
 
+  my @files = (qw[
+    vimrc
+    latexmkrc
+    psqlrc
+    gitconfig
+    gitignore_global
+    bash_aliases
+    ssh/rc
+    digrc
+  ]);
+
   for my $file (@files) {
     install $file;
   }
+
+  install 'tmux.old.conf' => 'tmux.conf';
 }
 
 main();
