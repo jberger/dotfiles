@@ -15,14 +15,14 @@ GetOptions(
 
 my $backup = "$Bin/.backup";
 
+
 sub install {
   my $file = shift;
   my $as = shift || $file;
 
   my $source = "$Bin/$file";
-  if (!-e $source) {
-    die "Source file $source does not exist, bailing out!";
-  }
+  die "Source file $source does not exist, bailing out!"
+    unless -e $source;
 
   my $target = "$ENV{HOME}/.$as";
   if (-l $target) {
@@ -59,7 +59,7 @@ sub is_new_tmux () {
 }
 
 sub main {
-  if (! -d $backup) {
+  unless (-d $backup) {
     say STDERR "Creating $backup for backup of any existing dotfiles in ~";
     make_path $backup or die "Error creating $backup: $!";
   }
