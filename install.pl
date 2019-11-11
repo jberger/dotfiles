@@ -42,6 +42,22 @@ sub install {
   symlink $source, $target or die "Could not link $target -> $source";
 }
 
+# new tmux config is required as of 2.9
+sub is_new_tmux () {
+  my $tmux = `tmux -V`;
+  return undef unless $tmux;
+
+  $tmux =~ s/tmux\s//;
+  my @version = split /\./, $tmux;
+
+  return 1 if $version[0] > 2;
+
+  $version[1] =~ s/\D+$//; # strip trailing symbols
+  return 1 if $version[1] >= 9;
+
+  return 0;
+}
+
 sub main {
   if (! -d $backup) {
     say STDERR "Creating $backup for backup of any existing dotfiles in ~";
@@ -63,7 +79,8 @@ sub main {
     install $file;
   }
 
-  install 'tmux.old.conf' => 'tmux.conf';
+  my $tmux = is_new_tmux ? 'tmux.new.conf' : 'tmux.old.conf';
+  install $tmux => 'tmux.conf';
 }
 
 main();
