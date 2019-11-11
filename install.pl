@@ -7,6 +7,11 @@ use feature 'say';
 use FindBin '$Bin';
 use File::Path 'make_path';
 use File::Copy 'move';
+use Getopt::Long;
+
+GetOptions(
+  'verbose' => \my $verbose,
+);
 
 my $backup = "$Bin/.backup";
 
@@ -23,7 +28,7 @@ sub install {
   if (-l $target) {
     my $link = readlink $target;
     if ($link eq $source) {
-      say STDERR "Symlink already exists $target -> $source";
+      say STDERR "Symlink already exists $target -> $source" if $verbose;
       return;
     }
     say STDERR "Replacing exsting link $target -> $link";
