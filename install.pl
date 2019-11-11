@@ -17,17 +17,12 @@ my @files = (qw[
   gitconfig
   gitignore_global
   bash_aliases
-  tmux.conf
   ssh/rc
   digrc
 ]);
 
-if (! -d $backup) {
-  say STDERR "Creating $backup for backup of any existing dotfiles in ~";
-  make_path $backup or die "Error creating $backup: $!";
-}
-
-for my $file (@files) {
+sub install {
+  my $file = shift;
   my $source = "$Bin/$file";
   if (!-e $source) {
     die "Source file $source does not exist, bailing out!";
@@ -38,7 +33,7 @@ for my $file (@files) {
     my $link = readlink $target;
     if ($link eq $source) {
       say STDERR "Symlink already exists $target -> $source";
-      next;
+      return;
     }
     say STDERR "Replacing exsting link $target -> $link";
     unlink $target;
@@ -49,4 +44,17 @@ for my $file (@files) {
 
   symlink $source, $target or die "Could not link $target -> $source";
 }
+
+sub main {
+  if (! -d $backup) {
+    say STDERR "Creating $backup for backup of any existing dotfiles in ~";
+    make_path $backup or die "Error creating $backup: $!";
+  }
+
+  for my $file (@files) {
+    install $file;
+  }
+}
+
+main();
 
