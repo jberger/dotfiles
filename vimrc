@@ -24,7 +24,8 @@ VAMActivate github:bling/vim-airline
 VAMActivate github:vim-airline/vim-airline-themes
 VAMActivate github:vim-perl/vim-perl
 "VAMActivate github:w0rp/ale
-VAMActivate github:altercation/vim-colors-solarized
+"VAMActivate github:altercation/vim-colors-solarized
+VAMActivate github:arcticicestudio/nord-vim
 VAMActivate github:kien/ctrlp.vim
 VAMActivate github:yko/mojo.vim
 VAMActivate github:elzr/vim-json
@@ -49,7 +50,8 @@ set background=dark
 set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-colorscheme solarized
+"colorscheme solarized
+colorscheme nord
 
 " perl
 let perl_sub_signatures = 1
