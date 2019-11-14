@@ -79,8 +79,19 @@ sub main {
     install $file;
   }
 
-  my $tmux = is_new_tmux ? 'tmux.new.conf' : 'tmux.old.conf';
-  install $tmux => 'tmux.conf';
+  #my $tmux = is_new_tmux ? 'tmux.new.conf' : 'tmux.old.conf';
+  #install $tmux => 'tmux.conf';
+  install 'tmux.nord.conf' => 'tmux.conf';
+
+  my $tmux_plugins = "$ENV{HOME}/.tmux/plugins";
+  if (! -d $tmux_plugins) {
+    make_path $tmux_plugins or die "Error creating $tmux_plugins: $!";
+  }
+  my $tpm = "$tmux_plugins/tpm";
+  if (! -d $tpm) {
+    system('git', 'clone', 'https://github.com/tmux-plugins/tpm', $tpm)
+      && die "Could not clone TPM to $tpm: $!";
+  }
 }
 
 main();
