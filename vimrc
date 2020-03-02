@@ -126,6 +126,7 @@ inoremap <S-Tab> <C-V><Tab>
 
 " vim-test
 let test#perl#prove#options = '-I local/lib/perl5'
+let test#javascript#mocha#file_pattern = '\vtests?/.*\.(js|mjs|jsx|coffee)$'
 nnoremap <Leader>p <Esc>:TestFile<CR>
 
 " external commands:
