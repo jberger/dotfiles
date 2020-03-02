@@ -44,6 +44,7 @@ VAMActivate github:unblevable/quick-scope
 VAMActivate github:AndrewRadev/splitjoin.vim
 VAMActivate github:lifepillar/pgsql.vim
 VAMActivate github:janko/vim-test
+VAMActivate github:editorconfig/editorconfig-vim
 
 " theme
 set background=dark
