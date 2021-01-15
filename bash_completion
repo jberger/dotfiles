@@ -1,0 +1,3 @@
+# tab complete from ssh config.d files
+complete -o default -o nospace -W "$(shopt -s nullglob; perl -nE 'say $1 if /Host\s+(.*)$/' ~/.ssh/config{,.d/*})" ssh sftp scp
+

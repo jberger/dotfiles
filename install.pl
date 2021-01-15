@@ -71,6 +71,7 @@ sub main {
     gitconfig
     gitignore_global
     bash_aliases
+    bash_completion
     ssh/rc
     digrc
   ]);
