@@ -1,3 +1,10 @@
 # tab complete from ssh config.d files
-complete -o default -o nospace -W "$(shopt -s nullglob; perl -nE 'say $1 if /Host\s+(.*)$/' ~/.ssh/config{,.d/*})" ssh sftp scp
+function _ssh_config_host_wordlist () {
+  files=()
+  [ -f ~/.ssh/config ] && files+=(~/.ssh/config)
+  [ -d ~/.ssh/config.d ] && files+=(~/.ssh/config.d/*)
+  [ ${#files[@]} -gt 0 ] && perl -nE 'say $1 if /Host\s+(.*)$/' ${files[*]}
+}
+
+complete -o default -o nospace -W "$(_ssh_config_host_wordlist)" ssh sftp scp
 
