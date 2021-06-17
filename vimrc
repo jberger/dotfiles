@@ -46,6 +46,9 @@ VAMActivate github:lifepillar/pgsql.vim
 VAMActivate github:janko/vim-test
 VAMActivate github:editorconfig/editorconfig-vim
 
+"HTML completion, <c-y>,
+VAMActivate github:mattn/emmet-vim
+
 " theme
 set background=dark
 set t_Co=256
