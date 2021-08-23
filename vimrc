@@ -36,11 +36,11 @@ VAMActivate github:tpope/vim-surround
 VAMActivate github:scrooloose/nerdcommenter
 VAMActivate github:gregsexton/MatchTag
 VAMActivate github:tpope/vim-unimpaired
-VAMActivate github:majutsushi/tagbar " requires ctags executable
+"VAMActivate github:majutsushi/tagbar " requires ctags executable
 VAMActivate github:chrisbra/Recover.vim
 VAMActivate github:bronson/vim-visual-star-search
 VAMActivate github:farmergreg/vim-lastplace
-VAMActivate github:unblevable/quick-scope
+"VAMActivate github:unblevable/quick-scope
 VAMActivate github:AndrewRadev/splitjoin.vim
 VAMActivate github:lifepillar/pgsql.vim
 VAMActivate github:janko/vim-test
