@@ -74,6 +74,7 @@ sub main {
     bash_completion
     ssh/rc
     digrc
+    kube/kubeconfig.sh
   ]);
 
   for my $file (@files) {
