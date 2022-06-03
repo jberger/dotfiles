@@ -15,6 +15,8 @@
   editor       = vim
   excludesfile = ~/.gitignore_global
   autocrlf = input
+[init]
+  defaultBranch = main
 [alias]
   start   = "!f() { git init . && git commit -m 'root' --allow-empty; }; f"
   please  = push --force-with-lease
