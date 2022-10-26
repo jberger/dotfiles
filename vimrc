@@ -49,11 +49,19 @@ VAMActivate github:editorconfig/editorconfig-vim
 "HTML completion, <c-y>,
 VAMActivate github:mattn/emmet-vim
 
-" swap file sanity
+" swap, backup, undo file sanity
 if !isdirectory($HOME . "/.vim/swap")
     call mkdir($HOME . "/.vim/swap", "p", 0700)
 endif
+if !isdirectory($HOME . "/.vim/backup")
+    call mkdir($HOME . "/.vim/backup", "p", 0700)
+endif
+if !isdirectory($HOME . "/.vim/undo")
+    call mkdir($HOME . "/.vim/undo", "p", 0700)
+endif
 set directory^=$HOME/.vim/swap//
+set backupdir^=$HOME/.vim/backup//
+set undodir^=$HOME/.vim/undo//
 
 " theme
 set background=dark
