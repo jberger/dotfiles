@@ -49,6 +49,12 @@ VAMActivate github:editorconfig/editorconfig-vim
 "HTML completion, <c-y>,
 VAMActivate github:mattn/emmet-vim
 
+" swap file sanity
+if !isdirectory($HOME . "/.vim/swap")
+    call mkdir($HOME . "/.vim/swap", "p", 0700)
+endif
+set directory^=$HOME/.vim/swap//
+
 " theme
 set background=dark
 set t_Co=256
