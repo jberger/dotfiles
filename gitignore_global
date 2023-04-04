@@ -50,6 +50,7 @@ perltidy.ERR
 .tags
 # Local project vimrc files
 .vimrc
+.vscode
 
 # Custom environments and installed modules #
 #############################################
