@@ -64,7 +64,7 @@ sub main {
     make_path $backup or die "Error creating $backup: $!";
   }
 
-  for my $dir (qw[ssh kube]) {
+  for my $dir (qw[ssh kube/config.d]) {
     my $target = "$ENV{HOME}/.$dir";
     next if -d $target;
     make_path $target or die "Error creating $target: $!";
