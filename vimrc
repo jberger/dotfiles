@@ -113,6 +113,16 @@ set ttyfast
 set backspace=indent,eol,start
 set colorcolumn=90
 set nojoinspaces " don't join sentances with double space
+set mmp=10000
+
+" spell checking
+set spelllang=en_us
+nnoremap <Leader>s :setlocal spell!<cr>
+" reminder use:
+"   [s and ]s to skip to spelling problems
+"   z= to get suggestions
+"   zg to add to dictionary
+"   zw to mark as incorrect
 
 " tabbing
 set autoindent            " auto-indent
