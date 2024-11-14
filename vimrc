@@ -150,6 +150,8 @@ nnoremap <Leader>wt :retab<CR>
 nnoremap <Leader>wa :retab \| :%s/\s\+$//<CR>
 " insert a literal tab with shift-tab
 inoremap <S-Tab> <C-V><Tab>
+" see listing (non-printable characters)
+nnoremap <Leader>l :set list!<CR>
 
 " vim-test
 let test#perl#prove#options = '-I local/lib/perl5'
