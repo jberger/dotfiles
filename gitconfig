@@ -32,6 +32,7 @@
   pdiff   = diff --word-diff=color --minimal
   ls      = ls-tree -r --name-only HEAD
   br      = branch -vv
+  ignore  = "!f() { BASE="$(git rev-parse --show-toplevel)"; ABS="$(realpath -s "${GIT_PREFIX:-.}/$1")"; REL="$(realpath -s --relative-base="$BASE" "$ABS")"; echo "$REL" >> .gitignore; }; f"
 
 # with inspiration drawn from
 #   https://hackernoon.com/lesser-known-git-commands-151a1918a60#.hkvhu5hw0
