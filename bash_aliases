@@ -9,3 +9,6 @@ alias cm2env='jq -r '\''.data | to_entries | map(.key + "=" + (.value)) | .[]'\'
 alias secret2env='jq -r '\''.data | map_values(@base64d) | to_entries | map(.key + "=" + (.value)) | .[]'\'
 
 dirsize(){ du -hd 1 "$@" | sort -h; }
+yaml2json () {
+  python -c 'import sys, yaml, json; print(json.dumps(yaml.safe_load(sys.stdin.read())))'
+}
