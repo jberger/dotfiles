@@ -1,53 +1,49 @@
 set nocompatible | filetype indent plugin on | syn on
 
-" bootstrap VAM
-fun! SetupVAM()
-  let c = get(g:, 'vim_addon_manager', {})
-  let g:vim_addon_manager = c
-  let c.plugin_root_dir = expand('$HOME', 1) . '/.vim/vim-addons'
-  " most used options you may want to use:
-  let c.log_to_buf = 1
-  let c.auto_install = 1
-  let &rtp.=(empty(&rtp)?'':',').c.plugin_root_dir.'/vim-addon-manager'
-  if !isdirectory(c.plugin_root_dir.'/vim-addon-manager/autoload')
-    execute '!git clone --depth=1 https://github.com/MarcWeber/vim-addon-manager '
-        \       shellescape(c.plugin_root_dir.'/vim-addon-manager', 1)
-  endif
+" --- vim-plug: bootstrap itself on first launch, then auto-install plugins ---
+let s:plug_path = expand('~/.vim/autoload/plug.vim')
+if empty(glob(s:plug_path))
+  silent execute '!curl -fLo ' . s:plug_path . ' --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-  " This provides the VAMActivate command, you could be passing plugin names, too
-  call vam#ActivateAddons([], {})
-endfun
-call SetupVAM()
+call plug#begin('~/.vim/plugged')
 
-" addons
-VAMActivate github:bling/vim-airline
-VAMActivate github:vim-airline/vim-airline-themes
-VAMActivate github:vim-perl/vim-perl
-"VAMActivate github:w0rp/ale
-"VAMActivate github:altercation/vim-colors-solarized
-VAMActivate github:arcticicestudio/nord-vim
-VAMActivate github:kien/ctrlp.vim
-VAMActivate github:yko/mojo.vim
-VAMActivate github:elzr/vim-json
-VAMActivate github:mileszs/ack.vim
-VAMActivate github:airblade/vim-gitgutter
-VAMActivate github:tpope/vim-fugitive
-VAMActivate github:tpope/vim-surround
-VAMActivate github:scrooloose/nerdcommenter
-VAMActivate github:gregsexton/MatchTag
-VAMActivate github:tpope/vim-unimpaired
-"VAMActivate github:majutsushi/tagbar " requires ctags executable
-VAMActivate github:chrisbra/Recover.vim
-VAMActivate github:bronson/vim-visual-star-search
-VAMActivate github:farmergreg/vim-lastplace
-"VAMActivate github:unblevable/quick-scope
-VAMActivate github:AndrewRadev/splitjoin.vim
-VAMActivate github:lifepillar/pgsql.vim
-VAMActivate github:janko/vim-test
-VAMActivate github:editorconfig/editorconfig-vim
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-perl/vim-perl'
+" Plug 'dense-analysis/ale'                  " (was w0rp/ale; renamed)
+" Plug 'altercation/vim-colors-solarized'
+Plug 'arcticicestudio/nord-vim'
+Plug 'ctrlpvim/ctrlp.vim'                    " maintained fork of kien/ctrlp.vim
+Plug 'yko/mojo.vim'
+Plug 'elzr/vim-json'
+Plug 'mileszs/ack.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
+Plug 'preservim/nerdcommenter'              " was scrooloose/nerdcommenter
+Plug 'gregsexton/MatchTag'
+Plug 'tpope/vim-unimpaired'
+" Plug 'preservim/tagbar'                    " was majutsushi/tagbar; requires ctags
+Plug 'chrisbra/Recover.vim'
+Plug 'bronson/vim-visual-star-search'
+Plug 'farmergreg/vim-lastplace'
+" Plug 'unblevable/quick-scope'
+Plug 'AndrewRadev/splitjoin.vim'
+Plug 'lifepillar/pgsql.vim'
+Plug 'janko/vim-test'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'mattn/emmet-vim'                       " HTML completion, <c-y>,
+Plug 'HerringtonDarkholme/yats.vim'         " TypeScript syntax (replaces vim's runtime TS syntax)
 
-"HTML completion, <c-y>,
-VAMActivate github:mattn/emmet-vim
+call plug#end()
+
+augroup TypeScriptRegexFix
+  autocmd!
+  " Force the classic engine (1) locally only for TypeScript and TSX files
+  autocmd FileType typescript,typescriptreact setlocal regexpengine=1
+augroup END
 
 " swap, backup, undo file sanity
 if !isdirectory($HOME . "/.vim/swap")
@@ -69,7 +65,7 @@ set t_Co=256
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
 "colorscheme solarized
-colorscheme nord
+silent! colorscheme nord " silent! so the first (pre-install) launch doesn't error
 
 " perl
 let perl_sub_signatures = 1
