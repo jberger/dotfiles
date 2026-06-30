@@ -57,3 +57,5 @@ perltidy.ERR
 node_modules/
 # Perl's Carton
 /local/
+
+**/.claude/settings.local.json
