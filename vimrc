@@ -41,8 +41,8 @@ call plug#end()
 
 augroup TypeScriptRegexFix
   autocmd!
-  " Force the classic engine (1) locally only for TypeScript and TSX files
-  autocmd FileType typescript,typescriptreact setlocal regexpengine=1
+  " Force the more robust engine locally only for TypeScript and TSX files
+  autocmd FileType typescript,typescriptreact setlocal regexpengine=2
 augroup END
 
 " swap, backup, undo file sanity
