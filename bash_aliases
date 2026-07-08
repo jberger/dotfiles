@@ -7,6 +7,7 @@ alias ll="ls -lah"
 # adapted from https://www.jujens.eu/posts/en/2021/Mar/21/kubectl-cfg-to-env/
 alias cm2env='jq -r '\''.data | to_entries | map(.key + "=" + (.value)) | .[]'\'
 alias secret2env='jq -r '\''.data | map_values(@base64d) | to_entries | map(.key + "=" + (.value)) | .[]'\'
+# requires glow from brew
 alias md='glow --tui'
 
 dirsize(){ du -hd 1 "$@" | sort -h; }
