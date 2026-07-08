@@ -29,6 +29,20 @@ commands, infra, framework choices) live in that project's memory, not here.
   applying changes directly, unless a project explicitly authorizes direct
   deploys.
 
+## Claude running commands
+- **Simplify the command** - I do try to audit the commands being run, please
+  make them easy to review
+- **Prefer executables in $PATH** - most of the time the commands you need will
+  be in the path. Check if necessary. When using tools like nvm or perlbrew,
+  effort should be taken to set the tool up correctly to work as designed
+  rather than worked around via $PATH hacking etc.
+- **Use the right tool for the job** - jq for json data, dom parser for html
+  (mojolicious tooling can help here), etc. Large bespoke python one-offs are
+  hard to audit often for little benefit.
+- **Ask before making changes** - Apart from the code in question, while
+  read-only queries are usually fine, I usually want final approval before
+  writing to other tools (databases, kubernetes, etc).
+
 ## Code & data taste
 - **DRY and unix-philosophy** — small, focused units with one job and clean
   interfaces — but not dogmatically: a component isn't automatically DRYer, and
