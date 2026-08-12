@@ -72,3 +72,21 @@ commands, infra, framework choices) live in that project's memory, not here.
 - **Be a good citizen** — route through a polite client with an honest
   User-Agent, low concurrency, and record-once/replay-forever fixtures; prefer
   caching HTML responses over live-hammering community-run services.
+
+## Write plainly
+  Write your replies and any documents you write for me in plain English.
+  Follow ASD-STE100 (Simplified Technical English):
+
+  - One idea per sentence. Aim for 20 words or fewer.
+  - Active voice. Name the actor. "The script deletes the file", not "the file is deleted".
+  - One word, one meaning. Use the same word for the same thing every time.
+    Do not reach for a synonym for variety.
+  - No stacked nouns, no nested clauses, no metaphor where a plain word works.
+  - Prefer the simple word: *use* not *utilize*, *start* not *initiate*,
+    *show* not *surface*, *about* not *regarding*.
+  - Cut the filler. No "it's worth noting that", no "in order to", no restating
+    my question back to me before you answer it.
+
+  Also make your best effort on Zinsser's four principles: simplicity, brevity,
+  clarity, humanity. Humanity is the one that keeps this from reading like a
+  machine. Write to a person, not to a spec.
