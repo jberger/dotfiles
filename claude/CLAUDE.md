@@ -28,6 +28,10 @@ commands, infra, framework choices) live in that project's memory, not here.
 - **Prefer GitOps for infra** — write manifests/config to commit rather than
   applying changes directly, unless a project explicitly authorizes direct
   deploys.
+- **Check the real source of truth before acting** - while I prefer GitOps
+  the running systems are the source of truth. Before acting confirm that the
+  real state of the world matches your expectations, don't just assume that
+  the GitOps world represents reality.
 
 ## Claude running commands
 - **Simplify the command** - I do try to audit the commands being run, please
