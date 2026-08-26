@@ -88,6 +88,9 @@ sub main {
     install $file;
   }
 
+  # nord supersedes old/new (it delegates styling to nord-tmux via tpm);
+  # new is the hand-styled fallback for machines where tpm cannot clone,
+  # old is the same config in pre-2.9 syntax.
   #my $tmux = is_new_tmux ? 'tmux.new.conf' : 'tmux.old.conf';
   #install $tmux => 'tmux.conf';
   install 'tmux.nord.conf' => 'tmux.conf';
@@ -99,7 +102,7 @@ sub main {
   my $tpm = "$tmux_plugins/tpm";
   if (! -d $tpm) {
     system('git', 'clone', 'https://github.com/tmux-plugins/tpm', $tpm)
-      && die "Could not clone TPM to $tpm: $!";
+      && die "Could not clone TPM to $tpm: $?";
   }
 }
 
