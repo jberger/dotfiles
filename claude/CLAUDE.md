@@ -23,6 +23,7 @@ commands, infra, framework choices) live in that project's memory, not here.
 - **Stay on stock, official tooling.** Prefer documented scaffolders/CLIs and
   their flags over workarounds or patched templates; e.g. bump Node via nvm
   rather than working around a version limit.
+- **Tests are never a ponytail target.** Trim code, not coverage.
 - **Be precise about data sources** (e.g. dev vs. production) before drawing
   conclusions.
 - **Prefer GitOps for infra** — write manifests/config to commit rather than

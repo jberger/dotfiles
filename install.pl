@@ -82,6 +82,7 @@ sub main {
     digrc
     kube/kubeconfig.sh
     claude/CLAUDE.md
+    claude/settings.json
   ]);
 
   for my $file (@files) {
