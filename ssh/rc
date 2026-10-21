@@ -3,8 +3,23 @@
 # automatic ssh forward into tmux
 # from https://werat.github.io/2017/02/04/tmux-ssh-agent-forwarding.html
 
-if [ ! -S ~/.ssh/ssh_auth_sock ] && [ -S "$SSH_AUTH_SOCK" ]; then
-    ln -sf $SSH_AUTH_SOCK ~/.ssh/ssh_auth_sock
+# Always repoint the stable symlink at THIS connection's forwarded socket.
+#
+# The version in that post guarded on [ ! -S ~/.ssh/ssh_auth_sock ], but -S
+# follows the symlink and only asks whether the target is a socket FILE --
+# not whether anything is still listening on it. Usually sshd unlinks its
+# forwarded socket when the connection ends, so the test goes false and the
+# next login relinks. When a socket file outlives its connection instead
+# (sshd killed abruptly, or a dropped link that did not clean up), the test
+# stays true, the relink is skipped, and the symlink is left pointing at a
+# dead agent until it is fixed by hand. tmux then hands every pane that dead
+# socket, which makes it look like a tmux problem when it is not.
+#
+# An inbound connection's $SSH_AUTH_SOCK is live by definition, so just use
+# it. The second test avoids self-linking if the symlink path has already
+# been exported into the environment.
+if [ -S "$SSH_AUTH_SOCK" ] && [ "$SSH_AUTH_SOCK" != "$HOME/.ssh/ssh_auth_sock" ]; then
+    ln -sf "$SSH_AUTH_SOCK" "$HOME/.ssh/ssh_auth_sock"
 fi
 
 # Taken from the sshd(8) manpage.
